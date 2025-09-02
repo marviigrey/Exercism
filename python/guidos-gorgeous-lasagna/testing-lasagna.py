@@ -1,20 +1,58 @@
-#Defining the EXPECTED_BAKE_TIME
-'''The expected bake time is a constant value that represent how much time the lasagna will take.
-'''
-EXPECTED_BAKE_TIME = 40
-print(EXPECTED_BAKE_TIME)
+"""Functions used in preparing Guido's gorgeous lasagna.
 
-def bake_time_remaining(baketime=0):
+Learn about Guido, the creator of the Python language:
+https://en.wikipedia.org/wiki/Guido_van_Rossum
 
-    '''Calculating the remaining bake time
-    param: number_of_mins
-    param: EXPECTED_BAKE_TIME
-    returns the remaining minutes the lasagna needs to be in the oven
-    '''
-   
-    bake_time_remaining = EXPECTED_BAKE_TIME - baketime 
-    return bake_time_remaining
+This is a module docstring, used to describe the functionality
+of a module and its functions and/or classes.
+"""
 
-total = bake_time_remaining()
-print(total)
 
+#TODO: define your EXPECTED_BAKE_TIME (required) and PREPARATION_TIME (optional) constants below.
+EXPECTED_BAKE_TIME=40
+PREPARATION_TIME=2
+
+#TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
+def bake_time_remaining(actual_min=0):
+    
+    bake_time = EXPECTED_BAKE_TIME - actual_min
+    return bake_time
+    """Calculate the bake time remaining.
+
+    :param elapsed_bake_time: int - baking time already elapsed.
+    :return: int - remaining bake time (in minutes) derived from 'EXPECTED_BAKE_TIME'.
+
+    Function that takes the actual minutes the lasagna has been in the oven as
+    an argument and returns how many minutes the lasagna still needs to bake
+    based on the `EXPECTED_BAKE_TIME`.
+    """
+
+bake_time_remaining()
+
+#TODO: Define the 'preparation_time_in_minutes()' function below.
+# To avoid the use of magic numbers (see: https://en.wikipedia.org/wiki/Magic_number_(programming)), you should define a PREPARATION_TIME constant.
+# You can do that on the line below the 'EXPECTED_BAKE_TIME' constant.
+# This will make it easier to do calculations, and make changes to your code.
+def preparation_time_in_minutes(number_of_layers):
+    preparation_time=number_of_layers * PREPARATION_TIME
+
+    return preparation_time
+
+
+preparation_time_in_minutes()
+
+
+#TODO: define the 'elapsed_time_in_minutes()' function below.
+
+def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
+    layers = number_of_layers * PREPARATION_TIME
+    bake_time = layers + elapsed_bake_time
+    return bake_time
+
+elapsed_time_in_minutes()
+
+
+
+
+# TODO: Remember to go back and add docstrings to all your functions
+#  (you can copy and then alter the one from bake_time_remaining.)
